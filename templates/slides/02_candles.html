@@ -1,0 +1,18 @@
+{# ===== SLIDE 2 : BLOW OUT THE CANDLES  (click the cake) ===== #}
+{% from 'partials/ui.html' import ico %}
+{% from 'partials/cake.html' import cake %}
+<section class="slide dots s-candles" data-slide="candles">
+
+  <div class="pop" style="left:-10px;top:-6px;--d:.05s">{{ ico('garland', 150, 'sway') }}</div>
+  <div class="pop" style="right:-10px;top:-6px;--d:.05s;scale:-1 1">{{ ico('garland', 150, 'sway') }}</div>
+
+  <h1 class="title script pop" style="--d:.2s">{{ t.candles_title }}</h1>
+  {{ ico('sparkle', 60, 'sp twinkle', 'left:250px;top:70px;color:#6b86c9') }}
+  {{ ico('sparkle', 42, 'sp twinkle d2', 'left:1000px;top:60px;color:#6b86c9') }}
+
+  <button id="cake" class="cake-btn pop" style="--d:.4s" type="button" aria-label="Blow out the candles">
+    {{ cake(True) }}
+  </button>
+
+  <p id="cakeHint" class="hand-hint pop" style="--d:.9s">{{ t.candles_hint }}</p>
+</section>

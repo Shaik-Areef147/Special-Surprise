@@ -1,0 +1,23 @@
+{# ===== SLIDE 4 : ACCEPT YOUR GIFTS?  YES -> gifts, NO -> retry ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-accept" data-slide="accept">
+
+  <div class="gingham patch patch-l"></div>
+  <div class="gingham patch patch-br"></div>
+
+  <div class="pop" style="left:50px;top:6px;--d:.1s">{{ ico('disco', 96, 'swing') }}</div>
+  <div class="pop" style="left:120px;top:20px;--d:.15s">{{ ico('disco', 76, 'swing d2') }}</div>
+  <div class="pop" style="right:70px;top:0;--d:.1s">{{ ico('disco', 130, 'swing') }}</div>
+
+  <h1 class="title hand pop" style="--d:.2s">{{ t.accept_title }}</h1>
+
+  <div class="cat-wrap pop" style="--d:.4s">
+    {{ ico('cat', 260, 'bob') }}
+    {{ ico('balloon', 56, 'balloon-r', 'color:#4fa0e0') }}
+    {{ ico('balloon', 46, 'balloon-r2', 'color:#2c5aa0') }}
+    {{ ico('gift', 78, 'gift-r') }}
+  </div>
+
+  <button class="cloud yes pop" style="left:400px;top:590px;--d:.8s" type="button" data-go="gifts">{{ t.accept_yes }}</button>
+  <button class="cloud no pop"  style="left:800px;top:596px;--d:.9s" type="button" data-go="retry">{{ t.accept_no }}</button>
+</section>

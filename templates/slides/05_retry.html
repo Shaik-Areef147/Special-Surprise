@@ -1,0 +1,22 @@
+{# ===== SLIDE 5 : PLEASE TRY AGAIN  (OKAY -> back to slide 4) ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-accept s-retry" data-slide="retry">
+
+  <div class="gingham patch patch-l"></div>
+  <div class="gingham patch patch-br"></div>
+
+  <div class="pop" style="left:50px;top:6px;--d:.1s">{{ ico('disco', 96, 'swing') }}</div>
+  <div class="pop" style="left:120px;top:20px;--d:.15s">{{ ico('disco', 76, 'swing d2') }}</div>
+  <div class="pop" style="right:70px;top:0;--d:.1s">{{ ico('disco', 130, 'swing') }}</div>
+
+  <h1 class="title hand pop" style="--d:.2s">{{ t.retry_title }}</h1>
+
+  <div class="cat-wrap pop" style="--d:.4s">
+    {{ ico('cat', 260, 'bob') }}
+    {{ ico('balloon', 56, 'balloon-r', 'color:#4fa0e0') }}
+    {{ ico('balloon', 46, 'balloon-r2', 'color:#2c5aa0') }}
+    {{ ico('gift', 78, 'gift-r') }}
+  </div>
+
+  <button class="cloud pop" style="left:545px;top:592px;--d:.8s" type="button" data-go="accept">{{ t.retry_button }}</button>
+</section>

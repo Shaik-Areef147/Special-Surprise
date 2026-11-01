@@ -1,0 +1,23 @@
+{# ===== SLIDE 3 : YAY!! HAPPY BIRTHDAY  (confetti + friends around the cake) ===== #}
+{% from 'partials/ui.html' import ico %}
+{% from 'partials/cake.html' import cake %}
+<section class="slide dots s-yay" data-slide="yay">
+
+  <div class="pop" style="left:-10px;top:-6px;--d:.05s">{{ ico('garland', 150, 'sway') }}</div>
+  <div class="pop" style="right:-10px;top:-6px;--d:.05s;scale:-1 1">{{ ico('garland', 150, 'sway') }}</div>
+
+  <h1 class="title script pop" style="--d:.15s">{{ t.yay_title }}</h1>
+  <div class="yay-name script pop" style="--d:.35s">{{ t.yay_sub }}</div>
+
+  <div class="yay-cake pop" style="--d:.5s">{{ cake(False) }}</div>
+
+  <div class="pop" style="left:250px;top:330px;--d:.7s">{{ ico('bear', 190, 'bob') }}</div>
+  <div class="pop" style="left:850px;top:290px;--d:.8s">{{ ico('cat', 190, 'bob d2') }}</div>
+
+  {{ ico('balloon', 70, 'rise', 'left:120px;top:230px;color:#6fa3dc;--s:5s') }}
+  {{ ico('balloon', 56, 'rise', 'left:190px;top:150px;color:#2c5aa0;--s:6s') }}
+  {{ ico('balloon', 70, 'rise', 'left:1090px;top:210px;color:#9cc1ee;--s:5.5s') }}
+  {{ ico('balloon', 56, 'rise', 'left:1030px;top:130px;color:#4f86c6;--s:6.5s') }}
+
+  <button class="cloud pop" style="left:545px;top:600px;--d:1.1s" type="button" data-go="accept">{{ t.yay_button }}</button>
+</section>

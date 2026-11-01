@@ -1,0 +1,28 @@
+{# ===== SLIDE 6 : CHOOSE YOUR GIFT  (letter / flowers / journal) ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-gifts" data-slide="gifts">
+
+  <h1 class="title script pop" style="--d:.1s">{{ t.gifts_title }}</h1>
+  {{ ico('lips', 100, 'pop', 'left:880px;top:20px;--d:.3s;rotate:12deg') }}
+  {{ ico('sparkle', 54, 'sp twinkle', 'left:270px;top:40px;color:#6b86c9') }}
+
+  <div class="gift-row">
+    <button class="gift pop" style="--d:.3s" type="button" data-go="letter" data-gift="letter" aria-label="Open {{ t.gift_1 }}">
+      {{ ico('envelope', 240, 'g-ico') }}
+      <span class="ribbon">{{ t.gift_1 }}</span>
+      <i class="tick">&#10003;</i>
+    </button>
+
+    <button class="gift pop" style="--d:.45s" type="button" data-go="flowers" data-gift="flowers" aria-label="Open {{ t.gift_2 }}">
+      {{ ico('bouquet', 200, 'g-ico') }}
+      <span class="ribbon">{{ t.gift_2 }}</span>
+      <i class="tick">&#10003;</i>
+    </button>
+
+    <button class="gift pop" style="--d:.6s" type="button" data-go="journal" data-gift="journal" aria-label="Open {{ t.gift_3 }}">
+      {{ ico('giftbox', 240, 'g-ico') }}
+      <span class="ribbon">{{ t.gift_3 }}</span>
+      <i class="tick">&#10003;</i>
+    </button>
+  </div>
+</section>

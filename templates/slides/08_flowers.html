@@ -1,0 +1,31 @@
+{# ===== SLIDE 8 : GIFT 2 - SOME FLOWERS FOR YOU (film strip + kitten) ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-flowers" data-slide="flowers">
+
+  <div class="gingham patch patch-bl"></div>
+  <div class="gingham patch patch-br"></div>
+
+  <div class="film pop" style="--d:.15s">
+    <div class="film-frame"><img src="{{ photos.film_1 }}" alt=""></div>
+    <div class="film-frame"><img src="{{ photos.film_2 }}" alt=""></div>
+    <div class="film-frame"><img src="{{ photos.film_3 }}" alt=""></div>
+    {{ ico('clip', 54, 'film-clip') }}
+  </div>
+
+  {{ ico('hat', 70, 'pop', 'left:70px;top:24px;--d:.5s;rotate:-22deg') }}
+  {{ ico('star', 70, 'twinkle', 'left:56px;top:330px') }}
+  {{ ico('star', 46, 'twinkle d2', 'left:420px;top:140px') }}
+  {{ ico('sparkle', 40, 'twinkle', 'left:430px;top:560px;color:#6b86c9') }}
+
+  <h1 class="title script flowers-title pop" style="--d:.3s">{{ t.flowers_title }}</h1>
+
+  <div class="flower-cat pop" style="--d:.5s">
+    {{ ico('cat', 320, 'bob') }}
+    {{ ico('bouquet', 168, 'fc-bouquet') }}
+    {{ ico('heart', 40, 'fc-heart beat', 'color:#ff8fb8') }}
+  </div>
+
+  {{ ico('swirl', 190, 'pop', 'left:1070px;top:330px;--d:.7s') }}
+
+  <button class="cloud small back" type="button" data-go="gifts">{{ t.back }}</button>
+</section>

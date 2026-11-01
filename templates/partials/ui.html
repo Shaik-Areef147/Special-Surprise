@@ -1,0 +1,9 @@
+{# ico(name, width, extra_class, extra_style)  ->  draws a sticker from the sprite #}
+{% macro ico(id, w, cls='', style='') -%}
+{%- set ratio = {
+  'disco':1.2, 'star':1, 'sparkle':1, 'balloon':1.83, 'camera':0.8, 'envelope':0.68,
+  'bouquet':1.33, 'giftbox':1.09, 'cat':1.36, 'bear':1.15, 'garland':2, 'clip':1.83,
+  'swirl':1.2, 'heart':0.95, 'lips':0.55, 'gift':1, 'hat':1.33, 'flower':1
+}[id] -%}
+<svg class="ico {{ cls }}" style="width:{{ w }}px;height:{{ (w * ratio)|round|int }}px;{{ style }}" aria-hidden="true"><use href="#{{ id }}" width="100%" height="100%"/></svg>
+{%- endmacro %}

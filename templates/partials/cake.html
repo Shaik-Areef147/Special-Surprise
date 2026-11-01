@@ -1,0 +1,44 @@
+{# cake(flames)  ->  the birthday cake. flames=True draws 9 lit candles #}
+{% macro cake(flames=True) -%}
+{%- set cols = ['#4fa0e0', '#f4c95d', '#ff9fb0', '#8fd0b5', '#7b6fd8'] -%}
+<svg class="cake-svg" viewBox="0 0 320 300" aria-hidden="true">
+  <!-- plate -->
+  <ellipse cx="160" cy="270" rx="150" ry="24" fill="#c3d1e6"/>
+  <ellipse cx="160" cy="263" rx="150" ry="24" fill="#eef3fa" stroke="#b8c8de" stroke-width="2"/>
+  <ellipse cx="160" cy="259" rx="118" ry="15" fill="#dfe8f5"/>
+
+  <!-- sponge -->
+  <path d="M52 150V240Q52 258 160 258 268 258 268 240V150Z" fill="#f2dcbc"/>
+  <path d="M52 198Q160 222 268 198V214Q160 238 52 214Z" fill="#7b4a2e" opacity=".88"/>
+  <path d="M52 150V240Q52 258 160 258 268 258 268 240V150" fill="none" stroke="#d9bd94" stroke-width="2"/>
+
+  <!-- frosting with drips -->
+  <path d="M44 140Q44 118 160 118 276 118 276 140V160Q276 178 258 178 250 178 248 166 246 190 232 190 220 190 218 170 214 184 204 184 192 184 190 168 184 196 168 196 154 196 152 170 146 188 132 188 118 188 116 166 112 184 100 184 88 184 86 166 82 180 68 180 44 180 44 160Z"
+        fill="#fffaf1" stroke="#e8dcc6" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="160" cy="132" rx="112" ry="13" fill="#fff" opacity=".75"/>
+
+  <!-- sprinkles -->
+  <g>
+    {% for x, y, c, r in [(78,150,0,20),(112,160,1,-30),(150,150,2,50),(190,158,3,-10),(236,150,0,35),(98,134,2,-20),(212,138,1,25),(262,160,3,60),(60,160,1,-45)] %}
+    <rect x="{{x}}" y="{{y}}" width="9" height="3.4" rx="1.7" fill="{{ cols[c] }}" transform="rotate({{r}} {{x}} {{y}})"/>
+    {% endfor %}
+  </g>
+
+  <!-- candles -->
+  {% for i in range(9) %}
+  {% set x = 84 + i * 19 %}
+  <rect x="{{x-4}}" y="82" width="8" height="48" rx="2" fill="{{ cols[i % 5] }}"/>
+  <path d="M{{x-4}} 94L{{x+4}} 90M{{x-4}} 106L{{x+4}} 102M{{x-4}} 118L{{x+4}} 114" stroke="#fff" stroke-width="2.4" opacity=".8"/>
+  <path d="M{{x}} 82V77" stroke="#3a2a22" stroke-width="1.6"/>
+  {% if flames %}
+  <g transform="translate({{x}} 76)">
+    <g class="flame" style="--i:{{ i }}">
+      <path d="M0 -24C9 -11 9 0 0 4 -9 0 -9 -11 0 -24Z" fill="url(#gFlame)"/>
+      <ellipse cx="0" cy="-3" rx="3" ry="5.4" fill="#fff6c4"/>
+    </g>
+    <circle class="puff" style="--i:{{ i }}" cx="0" cy="-10" r="5" fill="#aab6c6"/>
+  </g>
+  {% endif %}
+  {% endfor %}
+</svg>
+{%- endmacro %}

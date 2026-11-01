@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0c1630">
+  <title>{{ page_title }}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee&family=Caveat:wght@500;700&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,600;1,400&family=Patrick+Hand&family=Permanent+Marker&family=Playfair+Display:wght@900&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  {# all stickers are drawn once here and re-used by every slide #}
+  {% include 'partials/sprite.html' %}
+
+  <div id="viewport">
+    <div id="stage" aria-live="polite">
+
+      {# ---------- the 9 slides, in story order ---------- #}
+      {% include 'slides/01_intro.html' %}
+      {% include 'slides/02_candles.html' %}
+      {% include 'slides/03_yay.html' %}
+      {% include 'slides/04_accept.html' %}
+      {% include 'slides/05_retry.html' %}
+      {% include 'slides/06_gifts.html' %}
+      {% include 'slides/07_letter.html' %}
+      {% include 'slides/08_flowers.html' %}
+      {% include 'slides/09_journal.html' %}
+
+      <canvas id="confetti" width="1280" height="720"></canvas>
+    </div>
+
+    <button id="mute" type="button" aria-label="Toggle sound" title="Sound on/off">&#128266;</button>
+  </div>
+
+  <noscript><p style="position:fixed;inset:0;display:grid;place-items:center;background:#fff;color:#000;font:20px sans-serif">Please enable JavaScript to open your surprise 🎂</p></noscript>
+
+  <script id="cfg" type="application/json">{{ js_config|tojson }}</script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

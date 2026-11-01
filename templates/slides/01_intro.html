@@ -1,0 +1,27 @@
+{# ===== SLIDE 1 : INTRO  (photo card + HAPPY BIRTHDAY) ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-intro" data-slide="intro" data-go="candles"
+         role="button" tabindex="0" aria-label="Tap to open your surprise">
+
+  <div class="stripes"></div>
+
+  <div class="pop" style="left:1090px;top:-6px;--d:.1s">{{ ico('garland', 160, 'sway') }}</div>
+
+  <div class="photo-card pop" style="--d:.2s">
+    <div class="stamp"><img src="{{ photos.intro }}" alt=""></div>
+    <div class="ransom-tag">{{ t.intro_tag }}</div>
+    {{ ico('camera', 96, 'cam') }}
+    {{ ico('star', 78, 'st-tl') }}
+  </div>
+
+  <div class="ransom pop" style="--d:.45s">
+    {{ ico('star', 52, 'rs-l') }}
+    {{ ico('star', 52, 'rs-r') }}
+    <div class="word w1">{% for ch in 'HAPPY' %}<b>{{ ch }}</b>{% endfor %}</div>
+    <div class="word w2">{% for ch in 'BIRTHDAY' %}<b>{{ ch }}</b>{% endfor %}</div>
+  </div>
+
+  <div class="name-script pop" style="--d:.8s">{{ name }}</div>
+
+  <div class="tap-hint pop" style="--d:1.1s">{{ t.intro_hint }}</div>
+</section>

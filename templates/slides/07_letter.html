@@ -1,0 +1,29 @@
+{# ===== SLIDE 7 : GIFT 1 - THE LETTER (typed out by app.js) + 2 photos ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots s-letter" data-slide="letter">
+
+  <div class="gingham patch patch-tl"></div>
+  <div class="gingham patch patch-br"></div>
+
+  <div class="paper-wrap pop" style="--d:.1s">
+    <div class="paper torn">
+      <div id="letterText" class="letter-text" tabindex="0" aria-label="Your letter"></div>
+    </div>
+    {{ ico('clip', 58, 'paper-clip') }}
+  </div>
+
+  {{ ico('lips', 90, 'pop', 'left:36px;top:12px;--d:.3s;rotate:-14deg') }}
+
+  <div class="frame f1 pop" style="--d:.35s"><img src="{{ photos.letter_1 }}" alt=""></div>
+  <div class="frame f2 pop" style="--d:.55s"><img src="{{ photos.letter_2 }}" alt=""></div>
+
+  {{ ico('camera', 92, 'pop', 'left:1010px;top:18px;--d:.45s;rotate:8deg') }}
+  {{ ico('disco', 110, 'swing', 'left:1130px;top:0') }}
+  {{ ico('disco', 76, 'swing d2', 'left:1070px;top:96px') }}
+  {{ ico('balloon', 52, 'rise-s', 'left:700px;top:560px;color:#4fa0e0') }}
+  {{ ico('star', 56, 'twinkle', 'left:1190px;top:370px') }}
+  {{ ico('bear', 120, 'pop', 'left:585px;top:575px;--d:.8s') }}
+  {{ ico('hat', 56, 'pop', 'left:1200px;top:520px;--d:.9s;rotate:14deg') }}
+
+  <button class="cloud small back" type="button" data-go="gifts">{{ t.back }}</button>
+</section>

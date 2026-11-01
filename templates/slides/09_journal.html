@@ -1,0 +1,44 @@
+{# ===== SLIDE 9 : GIFT 3 - THE JOURNAL (open diary with photos + notes) ===== #}
+{% from 'partials/ui.html' import ico %}
+<section class="slide dots gingham s-journal" data-slide="journal">
+
+  <div class="book pop" style="--d:.1s">
+
+    {# ---------- LEFT PAGE ---------- #}
+    <div class="page page-l">
+      <div class="note">{{ t.journal_note }}</div>
+
+      <div class="jphoto-sq"><img src="{{ photos.journal_1 }}" alt=""></div>
+
+      <div class="main-char"><span>you are</span><span>the main</span><span>character</span></div>
+      <div class="bday-tag script">{{ t.journal_tag }}</div>
+
+      <div class="jphoto-round"><img src="{{ photos.journal_2 }}" alt=""></div>
+
+      <div class="ribbon-note">{{ t.journal_ribbon }}</div>
+
+      {{ ico('star', 46, 'twinkle', 'left:430px;top:60px') }}
+      {{ ico('sparkle', 34, 'twinkle d2', 'left:60px;top:40px;color:#6b86c9') }}
+      {{ ico('bear', 92, '', 'left:8px;top:470px') }}
+      {{ ico('star', 60, '', 'left:440px;top:380px;rotate:14deg') }}
+    </div>
+
+    <div class="spine"></div>
+
+    {# ---------- RIGHT PAGE ---------- #}
+    <div class="page page-r">
+      <div class="scallop">
+        <p>{{ t.journal_body }}</p>
+      </div>
+      {{ ico('disco', 80, 'swing', 'left:6px;top:-10px') }}
+      {{ ico('star', 44, 'twinkle', 'left:490px;top:420px') }}
+    </div>
+
+    {{ ico('clip', 56, 'bclip bclip-l') }}
+    {{ ico('clip', 56, 'bclip bclip-r') }}
+  </div>
+
+  {{ ico('bear', 118, 'pop bear-corner', 'left:1148px;top:452px;--d:.9s') }}
+
+  <button class="cloud small back" type="button" data-go="gifts">{{ t.back }}</button>
+</section>
